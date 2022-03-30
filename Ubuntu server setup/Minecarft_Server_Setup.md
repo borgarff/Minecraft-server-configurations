@@ -24,9 +24,12 @@
 * Download using `wget`. Install `wget` is you don't have it installed
 * Make sure you download server.jar inside your minecraft-server folder you created
 * To download minecraft server 1.17 use `wget https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar`
+* Change ownership to minecraft `chown minecraft:minecraft server.jar`
 * You can run minecraft server from root with this command `runuser -u minecraft -- java -Xmx1024M -Xms1024M -jar server.jar nogui`
 * Remember to update the eula. Set it to `eula=true`
-
+* Make sure that all other files in the minecraft directory is in the right group and is owned by the minecraft user `chown minecraft:minecraft *`
+* Create the systemd.service file
+* ExecStart=/usr/bin/java -Xms3072M -Xmx3072M -jar server.jar nogui
 
 ### Link to referance guide
 `https://minecraft.fandom.com/wiki/Tutorials/Ubuntu_startup_script`
