@@ -24,7 +24,8 @@
 * Download using `wget`. Install `wget` is you don't have it installed
 * Make sure you download server.jar inside your minecraft-server folder you created
 * To download minecraft server 1.17 use `wget https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar`
-
+* You can run minecraft server from root with this command `runuser -u minecraft -- java -Xmx1024M -Xms1024M -jar server.jar nogui`
+* Remember to update the eula. Set it to `eula=true`
 
 
 ### Link to referance guide
