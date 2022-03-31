@@ -1,10 +1,10 @@
-# Minecraft sever setup for Raspberry Pi
+# Minecraft sever setup for Ubuntu/Debian
 
 ## First step: Install Ubuntu-server 
 * Remember to install ssh to your server. This will make the installation process easier
 * Login in to your server over ssh.
-* Minecraft needs Java 8 or higher. Install Java OpenJDK version 8 or higher.
-`sudo apt install openjdk-8-jre-headless`
+* Minecraft needs Java 11 or higher. Install Java OpenJDK version 11 or higher.
+`sudo apt install openjdk-11-jre-headless`
 * Make sure that port 25565 is open on your server. (The Minecraft server will listen on this port)
 `sudo ufw allow 25565`
 
@@ -28,8 +28,9 @@
 * You can run minecraft server from root with this command `runuser -u minecraft -- java -Xmx1024M -Xms1024M -jar server.jar nogui`
 * Remember to update the eula. Set it to `eula=true`
 * Make sure that all other files in the minecraft directory is in the right group and is owned by the minecraft user `chown minecraft:minecraft *`
-* Create the systemd.service file
-* ExecStart=/usr/bin/java -Xms3072M -Xmx3072M -jar server.jar nogui
+* Create the systemd.service file `vim /lib/systemd/system/minecraft-server.service`
+* Enable the service `systemctl enable minecraft-server.service`
+* Start the minecraft server service `systemctl start minecraft-server.service` 
 
 ### Link to referance guide
 `https://minecraft.fandom.com/wiki/Tutorials/Ubuntu_startup_script`
